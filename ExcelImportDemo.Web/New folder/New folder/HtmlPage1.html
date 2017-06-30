@@ -1,0 +1,125 @@
+﻿<style>
+    .cover-slider-wrap {
+  position: relative;
+  max-width: 50%;
+  height: 100%;
+  margin: 2em auto;
+  padding: 5em 1em;
+  color: #fff;
+  line-height: 2;
+  font-weight: bold;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.cover-slider-inner {
+  position: relative;
+  min-height: 40em;
+  text-align: center;
+  z-index: 10;
+}
+
+.cover-slider {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+    .cover-slider-slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 100%;
+        padding: 0;
+        margin: 0;
+        background-size: cover;
+        background-position: center;
+        list-style: none;
+        z-index: 0;
+        opacity: .5;
+    }
+
+.cover-slider-slide:nth-child(1) { background-image: url("../Content/Mobile.jpg"); }
+
+.cover-slider-slide:nth-child(2) { background-image: url("../Content/Moto-E3-Power.jpg"); }
+
+.cover-slider-slide:nth-child(3) { background-image: url("../Content/Mobile.jpg"); }
+
+.cover-slider-slide:nth-child(4) { background-image: url("../Content/Moto-E3-Power.jpg"); }
+
+.cover-slider-slide.active {
+  -webkit-animation-duration: 2500ms;
+  animation-duration: 2500ms;
+  -webkit-animation-name: slidein;
+  animation-name: slidein;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.cover-slider-slide.inactive {
+  -webkit-animation-duration: 2500ms;
+  animation-duration: 2500ms;
+  -webkit-animation-name: slideout;
+  animation-name: slideout;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes 
+slidein {  from {
+ left: 0;
+ right: 100%;
+}
+
+to {
+  left: 0;
+  right: 0;
+}
+}
+
+@keyframes 
+slidein {  from {
+ left: 0;
+ right: 100%;
+}
+
+to {
+  left: 0;
+  right: 0;
+}
+}
+
+@-webkit-keyframes 
+slideout {  from {
+ left: 0;
+ right: 0;
+}
+
+to {
+  left: 100%;
+  right: 0;
+}
+}
+
+@keyframes 
+slideout {  from {
+ left: 0;
+ right: 0;
+}
+
+to {
+  left: 100%;
+  right: 0;
+}
+}
+</style>
+<div class="container">
+    <ul class="cover-slider">
+        <li class="cover-slider-slide"> asdasd </li>
+        <li class="cover-slider-slide"> ... </li>
+        <li class="cover-slider-slide"> ... </li>
+        <li class="cover-slider-slide"> ... </li>
+        <li class="cover-slider-slide"> ... </li>
+    </ul>
+</div>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="../Scripts/app/controllers/TestCtrl.js"></script>
