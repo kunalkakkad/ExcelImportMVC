@@ -1,0 +1,19 @@
+public IQueryable<UserExcelOfferUploadPT> productMatching(IQueryable<UserExcelOfferUploadPT> objUserExcelOfferUploadPT)
+        {
+            foreach (var item in objUserExcelOfferUploadPT)
+            {
+                if (item.EuCode != "" || item.EuCode != null)
+                {
+                    var matchedProduct = _DBEntities.products.Where(t => t.ProductCode == item.EuCode).FirstOrDefault();
+                }
+                else
+                {
+                    if (item.Product.Contains('|'))
+                    {
+                        var productNameSplitData = item.Product.Split('|');
+                        var productLikelyToMatch = _DBEntities.products.Where(t => t.Name.Contains('/' + productNameSplitData[0] + '/')).ToList();
+                    }
+
+                }
+            }
+        }
